@@ -15,6 +15,8 @@ class Op : public Base {
             ss << std::fixed << std::setprecision(1) << operand;
             return ss.str();
         }
+        virtual int number_of_children() { return 0; }
+        virtual Base* get_child(int i) { return nullptr; }
     private:
         double operand = 0;
 };

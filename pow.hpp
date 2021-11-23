@@ -16,6 +16,11 @@ class Pow : public Base
         Pow(Base* lhs, Base* rhs) { operands.push_back(lhs); operands.push_back(rhs); }
         virtual double evaluate() { return std::pow(operands[0]->evaluate(), operands[1]->evaluate()); }
         virtual std::string stringify() { return "(" + operands[0]->stringify() + " ** " + operands[1]->stringify() + ")"; }
+        virtual int number_of_children() { return operands.size(); }
+        virtual Base* get_child(int i) {
+            if (i > this->number_of_children()) return nullptr;
+            else return operands[i];
+        }
 };
 
 #endif
