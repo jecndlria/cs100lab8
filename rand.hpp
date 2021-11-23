@@ -22,7 +22,7 @@ class Rand : public Base {
             ss << std::fixed << std::setprecision(1) << operand;
             return ss.str();
         }
-        virtual int number_of_chilren() { return 1; }
+        virtual int number_of_children() { return 1; }
         virtual Base* get_child(int i) { return new Op(operand); }
     private:
         double operand = 0;
