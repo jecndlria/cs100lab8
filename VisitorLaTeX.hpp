@@ -10,10 +10,14 @@ class VisitorLaTeX : public Visitor {
 
         // Nodes with no children are visited only once (index = 0)
         virtual void visit_op(Op* node) {
-
+            double leafValue = node->evaluate();
+            std::string leafValueString = std::to_string(leafValue);
+            output_LaTeX += "{" + leafValueString + "}";
         }
         virtual void visit_rand(Rand* node) {
-
+            double leafValue = node->evaluate();
+            std::string leafValueString = std::to_string(leafValue);
+            output_LaTeX += "{" + leafValueString + "}";
         }
 
         // Nodes with two children are visited three times.
