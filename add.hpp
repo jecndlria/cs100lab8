@@ -21,7 +21,7 @@ class Add : public Base
             else return operands[i];
         }
         virtual void accept(Visitor* visitor, int index) {
-            
+
         }
 };
 

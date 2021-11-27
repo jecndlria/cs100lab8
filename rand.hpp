@@ -24,6 +24,10 @@ class Rand : public Base {
         }
         virtual int number_of_children() { return 1; }
         virtual Base* get_child(int i) { return new Op(operand); }
+
+        virtual void accept(Visitor* visitor, int index) {
+
+        }
     private:
         double operand = 0;
 };

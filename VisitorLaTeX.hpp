@@ -35,37 +35,45 @@ class VisitorLaTeX : public Visitor {
             output_LaTeX += "{" + secondChildValueString + "}}";
         }
         virtual void visit_sub_begin(Sub* node) {
-
+            output_LaTeX += "{";
         }
         virtual void visit_sub_middle(Sub* node) {
-
+            double firstChildValue = node->get_child(0)->evaluate();
+            std::string firstChildValueString = std::to_string(firstChildValue);
+            output_LaTeX += "{" + firstChildValueString + "}+";
         }
         virtual void visit_sub_end(Sub* node) {
 
         }
         virtual void visit_mult_begin(Mult* node) {
-
+            output_LaTeX += "{";
         }
         virtual void visit_mult_middle(Mult* node) {
-
+            double firstChildValue = node->get_child(0)->evaluate();
+            std::string firstChildValueString = std::to_string(firstChildValue);
+            output_LaTeX += "{" + firstChildValueString + "}+";
         }
         virtual void visit_mult_end(Mult* node) {
 
         }
         virtual void visit_div_begin(Div* node) {
-
+            output_LaTeX += "{";
         }
         virtual void visit_div_middle(Div* node) {
-
+            double firstChildValue = node->get_child(0)->evaluate();
+            std::string firstChildValueString = std::to_string(firstChildValue);
+            output_LaTeX += "{" + firstChildValueString + "}+";
         }
         virtual void visit_div_end(Div* node) {
 
         }
         virtual void visit_pow_begin(Pow* node) {
-
+            output_LaTeX += "{";
         }
         virtual void visit_pow_middle(Pow* node) {
-
+            double firstChildValue = node->get_child(0)->evaluate();
+            std::string firstChildValueString = std::to_string(firstChildValue);
+            output_LaTeX += "{" + firstChildValueString + "}+";
         }
         virtual void visit_pow_end(Pow* node) {
 
