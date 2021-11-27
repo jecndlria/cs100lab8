@@ -9,6 +9,7 @@
 #include "rand.hpp"
 #include "add.hpp"
 #include "sub.hpp"
+#include "pow.hpp"
 
 class Op;
 class Rand;
