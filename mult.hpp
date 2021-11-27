@@ -18,6 +18,10 @@ class Mult : public Base
             if (i > this->number_of_children()) return nullptr;
             else return operands[i];
         }
+
+        virtual void accept(Visitor* visitor, int index) {
+
+        }
 };
 
 #endif
