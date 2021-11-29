@@ -20,8 +20,12 @@ class Add : public Base
             if (i > this->number_of_children()) return nullptr;
             else return operands[i];
         }
-        virtual void accept(Visitor* visitor, int index) {
-
+        virtual void accept (Visitor* v, int index) {
+            switch(index) {
+                case 0: v->visit_add_begin(this);
+                case 1: v->visit_add_middle(this);
+                case 2: v->visit_add_end(this);
+            }
         }
 };
 

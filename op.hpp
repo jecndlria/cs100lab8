@@ -17,10 +17,7 @@ class Op : public Base {
         }
         virtual int number_of_children() { return 0; }
         virtual Base* get_child(int i) { return nullptr; }
-
-        virtual void accept(Visitor* visitor, int index) {
-
-        }
+        virtual void accept (Visitor* v, int index) { v->visit_op(this); }
     private:
         double operand = 0;
 };
