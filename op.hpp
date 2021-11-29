@@ -1,9 +1,12 @@
+#pragma once
 #ifndef __OP_HPP__
 #define __OP_HPP__
 
 #include "base.hpp"
 #include <iomanip>
 #include <sstream>
+
+//class Visitor;
 
 class Op : public Base {
     public:

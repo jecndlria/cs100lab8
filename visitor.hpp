@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __VISITOR_HPP__
 #define __VISITOR_HPP__
 

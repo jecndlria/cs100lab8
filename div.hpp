@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __DIV_HPP__
 #define __DIV_HPP__
 #include "base.hpp"

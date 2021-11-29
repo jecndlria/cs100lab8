@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "visitor.hpp"
 #include "base.hpp"
 #include "div.hpp"
 #include "mult.hpp"

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __MULT_HPP__
 #define __MULT_HPP__
 #include "base.hpp"
