@@ -5,8 +5,23 @@
 #include "iterator.hpp"
 #include "visitor.hpp"
 //#include "base.hpp"
+#include "op.hpp"
+#include "rand.hpp"
+#include "add.hpp"
+#include "sub.hpp"
+#include "mult.hpp"
+#include "div.hpp"
+#include "pow.hpp"
+
 
 //class Visitor;
+class Op;
+class Rand;
+class Add;
+class Sub;
+class Mult;
+class Div;
+class Pow;
 
 class VisitorLaTeX : public Visitor {
     public:
@@ -40,15 +55,6 @@ class VisitorLaTeX : public Visitor {
         std::string output_LaTeX = "$";
 };
 
-std::string PrintLaTeX(Base* ptr) 
-{
-    Iterator iter(ptr);
-    VisitorLaTeX* visitor;
-    for(iter; !iter.is_done(); iter.next())
-    {
-        iter.current_node()->accept(visitor, iter.current_index());
-    }
-    return visitor->getString();
-}
+std::string PrintLaTeX(Base*);
 
 #endif

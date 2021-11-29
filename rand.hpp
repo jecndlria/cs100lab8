@@ -3,6 +3,7 @@
 #define __RAND_HPP__
 
 #include "base.hpp"
+#include "op.hpp"
 #include <iomanip>
 #include <sstream>
 #include <time.h>
@@ -10,22 +11,13 @@
 
 class Rand : public Base {
     public:
-        Rand() {
-            operand = rand() % 100;
-        }
-        Rand(int seed) { 
-            srand(seed);
-            operand = rand() % 100;
-        };
-        virtual double evaluate() { return operand; }
-        virtual std::string stringify() {
-            std::ostringstream ss;
-            ss << std::fixed << std::setprecision(1) << operand;
-            return ss.str();
-        }
-        virtual int number_of_children() { return 1; }
-        virtual Base* get_child(int i) { return new Op(operand); }
-        virtual void accept (Visitor* v, int index) { v->visit_rand(this); }
+        Rand();
+        Rand(int seed);
+        virtual double evaluate();
+        virtual std::string stringify();
+        virtual int number_of_children();
+        virtual Base* get_child(int i);
+        virtual void accept (Visitor* v, int index);
     private:
         double operand = 0;
 };

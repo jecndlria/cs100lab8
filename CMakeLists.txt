@@ -11,8 +11,14 @@ ADD_EXECUTABLE(test
 ADD_EXECUTABLE(lab
 	main.cpp
 	iterator.cpp
-	base.hpp
 	VisitorLaTeX.cpp
+	add.cpp 
+	div.cpp 
+	mult.cpp 
+	op.cpp 
+	pow.cpp 
+	rand.cpp 
+	sub.cpp 
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
