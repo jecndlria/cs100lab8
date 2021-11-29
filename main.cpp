@@ -23,7 +23,9 @@ int main() {
     Base* add = new Add(three, mult);
     Base* minus = new Sub(add, two); 
 
-    //std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
-    std::cout << PrintLaTeX(minus); 
+
+
+    std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
+    std::cout << std::setprecision(1) << PrintLaTeX(minus) << std::endl;
     return 0;
 }

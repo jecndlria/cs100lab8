@@ -12,6 +12,7 @@
 #include "mult.hpp"
 #include "div.hpp"
 #include "pow.hpp"
+#include <sstream>
 
 
 //class Visitor;
@@ -52,7 +53,7 @@ class VisitorLaTeX : public Visitor {
         virtual void visit_pow_end(Pow* node);
         std::string getString();
     private:
-        std::string output_LaTeX = "$";
+        std::ostringstream output_LaTeX;
 };
 
 std::string PrintLaTeX(Base*);
