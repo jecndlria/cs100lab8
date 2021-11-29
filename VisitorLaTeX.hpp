@@ -1,6 +1,7 @@
 #ifndef VISITORLATEX_HPP
 #define VISITORLATEX_HPP
 
+#include "iterator.hpp"
 #include "visitor.hpp"
 #include "base.hpp"
 
@@ -89,8 +90,20 @@ class VisitorLaTeX : public Visitor {
             std::string secondChildValueString = std::to_string(secondChildValue);
             output_LaTeX += "{" + secondChildValueString + "}}";
         }
+        std::string getString() { return output_LaTeX; }
     private:
         std::string output_LaTeX = "$";
 };
+
+std::string PrintLaTeX(Base* ptr) 
+{
+    Iterator iter(ptr);
+    VisitorLaTeX* visitor;
+    for(iter; !iter.is_done(); iter.next())
+    {
+        iter.current_node()->accept(visitor, iter.current_index());
+    }
+    return visitor->getString();
+}
 
 #endif

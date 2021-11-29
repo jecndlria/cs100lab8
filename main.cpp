@@ -7,6 +7,7 @@
 #include "rand.hpp"
 #include "add.hpp"
 #include "sub.hpp"
+#include "VisitorLaTeX.hpp"
 
 int main() {
     // This is a very basic main, and being able to correctly execute this main
@@ -21,6 +22,7 @@ int main() {
     Base* add = new Add(three, mult);
     Base* minus = new Sub(add, two); 
 
-    std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
+    //std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
+    std::cout << PrintLaTeX(minus); 
     return 0;
 }
