@@ -12,8 +12,8 @@
         }
          void Pow::accept (Visitor* v, int index) {
             switch(index) {
-                case 0: v->visit_pow_begin(this);
-                case 1: v->visit_pow_middle(this);
-                case 2: v->visit_pow_end(this);
+                case 0: { v->visit_pow_begin(this); break; }
+                case 1: { v->visit_pow_middle(this); break; }
+                case 2: { v->visit_pow_end(this); break; }
             }
         }

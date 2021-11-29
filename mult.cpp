@@ -1,4 +1,5 @@
 #include "mult.hpp"
+#include <iostream>
 
 
         Mult::Mult() : Base() {};
@@ -12,8 +13,8 @@
         }
          void Mult::accept (Visitor* v, int index) {
             switch(index) {
-                case 0: v->visit_mult_begin(this);
-                case 1: v->visit_mult_middle(this);
-                case 2: v->visit_mult_end(this);
+                case 0: { v->visit_mult_begin(this); break; } 
+                case 1: { v->visit_mult_middle(this); break; }
+                case 2: { v->visit_mult_end(this); break; }
             }
         }
