@@ -28,7 +28,7 @@
             double firstChildValue = node->get_child(0)->evaluate();
             std::ostringstream firstChildValueString;
             firstChildValueString << std::fixed << std::setprecision(0) << firstChildValue;;
-            output_LaTeX << "}+";
+            output_LaTeX << "+";
         }
          void VisitorLaTeX::visit_add_end(Add* node) {
             double secondChildValue = node->get_child(1)->evaluate();
@@ -43,7 +43,7 @@
             double firstChildValue = node->get_child(0)->evaluate();
             std::ostringstream firstChildValueString;
             firstChildValueString << std::fixed << std::setprecision(0) << firstChildValue;;
-            output_LaTeX << "}-";
+            output_LaTeX << "-";
         }
          void VisitorLaTeX::visit_sub_end(Sub* node) {
             double secondChildValue = node->get_child(1)->evaluate();
@@ -88,7 +88,7 @@
             double firstChildValue = node->get_child(0)->evaluate();
             std::ostringstream firstChildValueString;
             firstChildValueString << std::fixed << std::setprecision(0) << firstChildValue;
-            output_LaTeX << "}^";
+            output_LaTeX << "^";
         }
          void VisitorLaTeX::visit_pow_end(Pow* node) {
             double secondChildValue = node->get_child(1)->evaluate();
@@ -104,6 +104,7 @@
 
 std::string PrintLaTeX(Base* ptr) 
 {
+    if (!ptr) return "";
     Iterator iter(ptr);
     VisitorLaTeX* visitor = new VisitorLaTeX;
     iter = Iterator(ptr);

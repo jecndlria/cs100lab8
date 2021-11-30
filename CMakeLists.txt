@@ -6,6 +6,16 @@ ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(test
 	unit_test.cpp
+
+	iterator.cpp
+	VisitorLaTeX.cpp
+	add.cpp 
+	div.cpp 
+	mult.cpp 
+	op.cpp 
+	pow.cpp 
+	rand.cpp 
+	sub.cpp 
 )
 
 ADD_EXECUTABLE(lab

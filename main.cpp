@@ -27,6 +27,6 @@ int main() {
     // fix prints to work like the mult
 
     std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
-    std::cout << std::setprecision(1) << PrintLaTeX(mult) << std::endl;
+    std::cout << std::setprecision(1) << PrintLaTeX(minus) << std::endl;
     return 0;
 }
