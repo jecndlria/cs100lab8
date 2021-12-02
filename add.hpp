@@ -13,6 +13,7 @@ class Add : public Base
         //Op* rhs;
     public:
         Add();
+        ~Add() {for (int i = 0; i < operands.size(); i++) {delete operands[i]; };}
         Add(Base* lhs, Base* rhs);
         virtual double evaluate();
         virtual std::string stringify();

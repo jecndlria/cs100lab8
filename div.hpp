@@ -11,6 +11,7 @@ class Div : public Base
         std::vector<Base*> operands;
     public:
         Div();
+        ~Div() {for (int i = 0; i < operands.size(); i++) {delete operands[i]; };}
         Div(Base* lhs, Base* rhs);
         virtual double evaluate();
         virtual std::string stringify();

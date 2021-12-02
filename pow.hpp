@@ -14,6 +14,7 @@ class Pow : public Base
         //Op* rhs;
     public:
         Pow();
+        ~Pow() {for (int i = 0; i < operands.size(); i++) {delete operands[i]; };}
         Pow(Base* lhs, Base* rhs);
         virtual double evaluate();
         virtual std::string stringify();

@@ -117,5 +117,6 @@ std::string PrintLaTeX(Base* ptr)
 
     std::string output = visitor->getString();
     output.push_back('$');
+    delete visitor;
     return output;
 }

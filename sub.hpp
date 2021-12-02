@@ -11,6 +11,7 @@ class Sub : public Base
         std::vector<Base*> operands;
     public:
         Sub();
+        ~Sub() {for (int i = 0; i < operands.size(); i++) {delete operands[i]; };}
         Sub(Base* lhs, Base* rhs);
         virtual double evaluate();
         virtual std::string stringify();

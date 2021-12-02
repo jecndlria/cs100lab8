@@ -28,5 +28,6 @@ int main() {
 
     std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
     std::cout << std::setprecision(1) << PrintLaTeX(minus) << std::endl;
+    delete minus;
     return 0;
 }
