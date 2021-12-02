@@ -1,5 +1,16 @@
+#pragma once
 #ifndef __VISITOR_HPP__
 #define __VISITOR_HPP__
+
+
+//#include "base.hpp"
+//#include "div.hpp"
+//#include "mult.hpp"
+//#include "op.hpp"
+//#include "rand.hpp"
+//#include "add.hpp"
+//#include "sub.hpp"
+//#include "pow.hpp"
 
 class Op;
 class Rand;

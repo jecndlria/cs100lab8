@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __ADD_HPP__
 #define __ADD_HPP__
 #include "base.hpp"
@@ -11,22 +12,14 @@ class Add : public Base
         //Op* lhs;
         //Op* rhs;
     public:
-        Add() : Base() {}
-        Add(Base* lhs, Base* rhs) { operands.push_back(lhs); operands.push_back(rhs); }
-        virtual double evaluate() { return operands[0]->evaluate() + operands[1]->evaluate(); }
-        virtual std::string stringify() { return "(" + operands[0]->stringify() + " + " + operands[1]->stringify() + ")"; }
-        virtual int number_of_children() { return operands.size(); }
-        virtual Base* get_child(int i) {
-            if (i > this->number_of_children()) return nullptr;
-            else return operands[i];
-        }
-        virtual void accept (Visitor* v, int index) {
-            switch(index) {
-                case 0: v->visit_add_begin(this);
-                case 1: v->visit_add_middle(this);
-                case 2: v->visit_add_end(this);
-            }
-        }
+        Add();
+        ~Add() {for (int i = 0; i < operands.size(); i++) {delete operands[i]; };}
+        Add(Base* lhs, Base* rhs);
+        virtual double evaluate();
+        virtual std::string stringify();
+        virtual int number_of_children();
+        virtual Base* get_child(int i);
+        virtual void accept (Visitor* v, int index);
 };
 
 #endif

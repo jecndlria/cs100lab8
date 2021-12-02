@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __OP_HPP__
 #define __OP_HPP__
 
@@ -5,19 +6,17 @@
 #include <iomanip>
 #include <sstream>
 
+//class Visitor;
+
 class Op : public Base {
     public:
-        Op(double value) : operand(value){ };
-        Op() : operand(0) {};
-        virtual double evaluate() { return operand; }
-        virtual std::string stringify() {
-            std::ostringstream ss;
-            ss << std::fixed << std::setprecision(1) << operand;
-            return ss.str();
-        }
-        virtual int number_of_children() { return 0; }
-        virtual Base* get_child(int i) { return nullptr; }
-        virtual void accept (Visitor* v, int index) { v->visit_op(this); }
+        Op(double value);
+        Op();
+        virtual double evaluate();
+        virtual std::string stringify();
+        virtual int number_of_children();
+        virtual Base* get_child(int i);
+        virtual void accept (Visitor* v, int index);
     private:
         double operand = 0;
 };

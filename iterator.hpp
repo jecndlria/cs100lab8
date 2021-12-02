@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __ITERATOR_HPP__
 #define __ITERATOR_HPP__
 
